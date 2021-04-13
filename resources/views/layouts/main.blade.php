@@ -39,22 +39,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href=" " class="nav-link">Acceuil</a>
+                    <a href="../index" class="nav-link">Acceuil</a>
                 </li>
             </ul>
-
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-                    </div>
-                </div>
-            </form>
-
         </nav>
         <!-- /.navbar -->
 
@@ -73,7 +60,7 @@
                         <img src="dist/img/avatar.svg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <h5 class="d-block ml-4 text-light">Directeur </h5>
+                        <h5 class="d-block ml-4 text-light">Directeur</h5>
                         <!-- recuperation du nom  à l'inscription et affichage-->
                     </div>
                 </div>
@@ -84,7 +71,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="../index" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -113,6 +100,18 @@
                                         <p>Une matière</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{asset('ajout_eleve')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Un élève</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{asset('ajout_note')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Une note</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
@@ -138,7 +137,17 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="/deconnexion" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Deconnexion
+                                </p>
+                            </a>
+                        </li>
                     </ul>
+                   
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -156,13 +165,13 @@
                             <h1 class="m-0 text-dark">Dashboard</h1>
                         </div>
                         <!-- /.col -->
-                        <div class="col-sm-6">
+                       <!--   <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">
-                                    <a href="#">Accueil</a>
+                                    <a href="../index">Accueil</a>
                                 </li>
                             </ol>
-                        </div>
+                        </div>-->
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->

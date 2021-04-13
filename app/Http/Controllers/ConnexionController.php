@@ -36,14 +36,16 @@ $credentials = $request->only('email', 'password');
 $recup = DB::select('select id  from utilisateurs where email=?',[$request->input('email')]);//recuperation du mail pour la verification avec le statut
 
 
- if (Auth::attempt($credentials)&& $recup[0]->id ==1) {
-     // Authentication passed...
-     return view('/index');
- }elseif(Auth::attempt($credentials)&& ($recup[0]->id !==1)){
-     return view('/index1');
- }else{
-     return redirect()->intended('/connexion');
+    if (Auth::attempt($credentials)&& $recup[0]->id ==1) {
+        // Authentication passed...
+        return redirect()->intended('/index');
+    }elseif(Auth::attempt($credentials)&& ($recup[0]->id !==1)){
+        return redirect()->intended('/index1');
+    }else{
+        return redirect()->intended('/connexion')->withErrors([
+            'email' =>"Vous n'etes pas encore enregistrer.Merci "
+        ]);
+    }
+    
  }
-   
-}
 }

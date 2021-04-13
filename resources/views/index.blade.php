@@ -163,20 +163,20 @@
                                 <div class="row">
                                     <!-- mise en plac d'un formaulaire pour le parametrage annuel -->
                                     <div class="col-4">
-                                        <input type="text"  value='{{$parametre->annee}}'class="form-control" name="annee" placeholder="Année">
+                                        <input type="text"  value=''class="form-control" name="annee" placeholder="Année">
                                     </div>
                                     <div class="col-4">
-                                        <input type="text" class="form-control"  value='{{$parametre->semestre}}' name="semestre" placeholder="Semetre">
+                                        <input type="text" class="form-control"  value='' name="semestre" placeholder="Semetre">
                                     </div>
                                     <div class="col-4">
-                                        <input type="text" class="form-control"  value='{{$parametre->classe}}' name="classe" placeholder="Classe disponible">
+                                        <input type="text" class="form-control"  value='' name="classe" placeholder="Classe disponible">
                                     </div>
                                     <div>
                                 </div>
                             </form>
                             </div>
                               <div class="modal-footer">
-                                     <a href="update/{{$parametre->id}}"><button class="btn btn-info "type=" submit ">Valider</button></a>
+                                     <a href=""><button class="btn btn-info "type=" submit ">Valider</button></a>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
                                     </div>
                             </div>

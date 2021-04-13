@@ -25,17 +25,25 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form">
+                            <form role="form" action="/ajout_mat" method="post">
+                            {{@csrf_field()}}
                                 <div class="card-body">
-
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Matières</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Selection une matière">
+                                        <select class="form-control"  name='matiere' id="exampleFormControlSelect1">
+                                            <option>Français</option>
+                                            <option>Mathématique</option>
+                                            <option>Anglais</option>
+                                            <option>HG</option>
+                                            <option>Dictée</option>
+                                            <option>Svt</option>
+                                            <option>EPS</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Coeficient</label>
-                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="coefficient">
+                                        <input type="text" class="form-control" name="coeficient" id="exampleInputPassword1" placeholder="coefficient">
                                     </div>
 
                                     <div class="card-footer ">
@@ -62,14 +70,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($matieres as $matiere)
                                             <tr>
-                                                <td>Mathématique</td>
-                                                <td>05</td>
+                                                <td>{{$matiere->matiere}}</td>
+                                                <td>{{$matiere->coeficient}}</td>
                                                 <td>
                                                     <button class="btn btn-warning " type=" submit ">modifier</button>
-                                                    <button class="btn btn-danger " type=" submit ">supprimer</button>
+                                                    <a href="delete/{{$matiere->id}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -80,6 +90,5 @@
                     </div>
                     <!-- /.row -->
                 </div>
-                <!-- /.container-fluid -->
-               
+                <!-- /.container-fluid -->       
  @endsection

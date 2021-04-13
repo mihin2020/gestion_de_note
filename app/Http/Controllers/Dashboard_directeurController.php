@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\DB;
 class Dashboard_directeurController extends Controller
 {
     public function display (Request $request ) {
+        var_dump(auth()->guest());
         return view('/index');
+
       /* 
         $recup =DB::select('select nom from utilisateurs where email=?',[$request->input('email')]);
         $affi = utilisateurs::all();

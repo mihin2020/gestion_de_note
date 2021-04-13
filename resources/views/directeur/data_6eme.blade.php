@@ -37,20 +37,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($eleves as $eleve)
                             <tr>
                                 <td>M32450</td>
-                                <td>Mihin</td>
-                                <td>hugues aime</td>
-                                <td>Masculin</td>
-                                <td>26</td>
-                                <td>hugues@gmail.com</td>
-                                <td>77151515</td>
+                                <td>{{$eleve->nom}}</td>
+                                <td>{{$eleve->prenom}}</td>
+                                <td>{{$eleve->sexe}}</td>
+                                <td>{{$eleve->date}}</td>
+                                <td>{{$eleve->email}}</td>
+                                <td>{{$eleve->numero}}</td>
                                 <td>
-                                    <button class="btn btn-warning btn-xs " type=" submit ">Modifier</button>
-                                    <button class="btn btn-danger  btn-xs" type=" submit ">Supprimer</button>
+                                  <a href="/ajout_note"><button class="btn btn-warning btn-xs " type=" submit ">ajouter</button></a>  
                                     <button class="btn btn-success  btn-xs" type=" submit ">Voir</button>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
