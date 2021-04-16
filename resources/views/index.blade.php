@@ -104,7 +104,6 @@
                                                 <th class="text-center">SEMESTRE</th>
                                                 <th class="text-center">CLASSE</th>
                                                 <th class="text-center">OPERATIONS</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -114,77 +113,42 @@
                                                 <td class="text-center">{{$parametre->semestre}}</td>
                                                 <td class="text-center">{{$parametre->classe}}</td>
                                                 <td class="text-center">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Modifier</button>
-                                                <a href="delete/{{$parametre->id}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                                <a href="update/{{$parametre->id}}"><button type="button" class="btn btn-warning">Modifier</button></a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+                                                Supprimer
+                                                </button>
                                                 </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
                                     </table>
-                                                                <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body text-center font-weight-bold">
-                                            Voulez vous vraiment supprimer ? <br>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                                            
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
                             <!-- /.card -->
                         </div>
                     </div>
-
-                         <!-- modification de formulaire-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Paramétrage annuel</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            <form action="/update/{id}" method="post" >
-                            {{@csrf_field()}}
-                                <div class="row">
-                                    <!-- mise en plac d'un formaulaire pour le parametrage annuel -->
-                                    <div class="col-4">
-                                        <input type="text"  value=''class="form-control" name="annee" placeholder="Année">
-                                    </div>
-                                    <div class="col-4">
-                                        <input type="text" class="form-control"  value='' name="semestre" placeholder="Semetre">
-                                    </div>
-                                    <div class="col-4">
-                                        <input type="text" class="form-control"  value='' name="classe" placeholder="Classe disponible">
-                                    </div>
-                                    <div>
-                                </div>
-                            </form>
-                            </div>
-                              <div class="modal-footer">
-                                     <a href=""><button class="btn btn-info "type=" submit ">Valider</button></a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
-                                    </div>
-                            </div>
-                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                           Voulez vous vraiment effectuer une suppression?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">NON</button>
+                            <a href=""><button type="button" class="btn btn-danger">OUI</button></a>
                         </div>
                         </div>
                     </div>
-
+                    </div>
 
                 
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

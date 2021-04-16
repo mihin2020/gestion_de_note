@@ -18,7 +18,7 @@ class CreateUtilisateursTable extends Migration
             $table->string('nom',25);
             $table->string('prenom',25);
             $table->string('classe')->nullable();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('password_confirm');
             $table->timestamps();

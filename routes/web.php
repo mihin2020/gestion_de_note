@@ -25,10 +25,11 @@ use App\Http\Controllers\Ajout_matController;
 
 //Route concernant le dashboard
 Route::get('/index','Dashboard_directeurController@display' );
-Route::post('/index','ParametreController@store' );
-Route::get('/index','ParametreController@show');
+Route::post('/index','ParametreController@store');
+Route::get('/index','ParametreController@index');
 Route::get('/update/{id}','ParametreController@update');
-Route::get('/delete/{id}','ParametreController@destroy');
+Route::get('/edit/{id}','ParametreController@edit');
+Route::get('/delete/{id}','ParametreCntroller@destroy');
 Route::get('/index1', function () {
     return view('index1');
 });
@@ -65,9 +66,13 @@ Route::get('/delete/{id}','Ajout_eleveController@destroy');
 
 //Route sur l'affichage de note de 6e
 Route::get('/data_6eme','Data_6emeController@display')->name('data_6eme');
-Route::post('/note','NoteController@store');
+Route::post('/note','NoteController@store')->name('data_6eme');
 
 //Route sur l'affichage de note de 5e
 Route::get('/data_5eme','Data_5emeController@display')->name('data_5eme'); //affichage du formulaire d'inscription
 
 Route::get('/ajout_note','Ajout_noteController@display')->name('ajout_note');
+
+
+//Route sur l'affichage de note de 6e
+Route::resource('/resultat_6eme','Resultat6_Controller');

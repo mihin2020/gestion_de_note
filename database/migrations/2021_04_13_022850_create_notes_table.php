@@ -15,6 +15,8 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('eleves_id');
+            $table->foreign('eleves_id')->references('id')->on('eleves');
             $table->string('matiere');
             $table->string('coeficient');
             $table->string('note1');

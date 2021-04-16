@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\eleves;
 use Illuminate\Http\Request;
-use App\Parametre;
 use Illuminate\Support\Facades\DB;
 
-class ParametreController extends Controller
+class Resultat6_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class ParametreController extends Controller
      */
     public function index()
     {
-       
-         $parametres = Parametre::all();
-         $parametres = DB::table('parametres')->get();
-        return view('/index',compact('parametres'));
+       return view('/directeur.resultat_6eme');
     }
 
     /**
@@ -28,7 +25,7 @@ class ParametreController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -39,13 +36,7 @@ class ParametreController extends Controller
      */
     public function store(Request $request)
     {
-       
-        $param = new Parametre();
-        $param->annee =$request->input('annee');
-        $param->semestre =$request->input('semestre');
-        $param->classe =$request->input('classe');
-        $param->save();
-        return redirect()->intended('/index');
+        //
     }
 
     /**
@@ -54,10 +45,11 @@ class ParametreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $parametres = DB::table('parametres')->get();
-        return view('/index',['parametres'=>$parametres]);
+       DB::table('eleves')->select('eleves.nom','eleves.prenom','notes.note1','notes.note2','notes.note3')->join('notes','eleves_id.id', '=','notes.id')->get();
+       return view('/directeur.resultat_6eme')
+
     }
 
     /**
@@ -68,10 +60,7 @@ class ParametreController extends Controller
      */
     public function edit($id)
     {
-        
-       $param = Parametre::find($id);
-       $params = Parametre::all();
-        return view('/index' , compact('parametre'));        
+        //
     }
 
     /**
@@ -81,9 +70,9 @@ class ParametreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id )
+    public function update(Request $request, $id)
     {
-      
+        //
     }
 
     /**
@@ -94,7 +83,6 @@ class ParametreController extends Controller
      */
     public function destroy($id)
     {
-       DB::delete('delete from parametres where id=?',[$id]);
-       return redirect('/index');
+        //
     }
 }

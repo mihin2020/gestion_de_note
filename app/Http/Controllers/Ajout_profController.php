@@ -24,7 +24,7 @@ class Ajout_profController extends Controller
                 'classe'=> ['required','string'],
                 'email'=> ['required','email'],
                 'password'=> ['required','min:3','max:6',],
-                'password_confirm'=> ['required',],
+                
             ]);
 
         $utilisateur = new utilisateurs();
@@ -41,7 +41,7 @@ class Ajout_profController extends Controller
     public function show()
     {
         $classes=Parametre::all();
-        $ajout_profs = DB::table('utilisateurs')->get();
+        $ajout_profs = DB::table('utilisateurs')->where('id','>','1')->get();
         return view('/directeur.ajout_prof',[
             'ajout_profs'=>$ajout_profs,
             'classes'=>$classes

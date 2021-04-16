@@ -11,6 +11,7 @@ class NoteController extends Controller
     {
      
         $notes = new notes();
+        $notes ->eleves_id =$request->input('eleves_id');
         $notes ->matiere =$request->input('matiere');
         $notes ->coeficient =$request->input('coeficient');
         $notes ->note1 =$request->input('note1');
@@ -18,6 +19,6 @@ class NoteController extends Controller
         $notes ->note3 =$request->input('note3');
         $notes->save();
      
-        return 'ok';
+        return redirect('/ajout_note');
     }
 }

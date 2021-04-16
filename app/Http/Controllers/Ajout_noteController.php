@@ -12,7 +12,8 @@ class Ajout_noteController extends Controller
     public function display(){
         $matieres=matieres::all();
         $eleves = eleves::where('classe','6 ème')->get();
-        return view('/directeur.ajout_note',compact('eleves'),compact('matieres'));
+        //dd($eleves);
+        return view('/directeur.ajout_note',compact('eleves','matieres'));
         
     }
     public function show(){

@@ -40,7 +40,7 @@
                               <label for="exampleInputPassword1">Matières</label>
                                  <select class="form-control"  name='matiere' id="exampleFormControlSelect1">
                                  @foreach($matieres as $matiere)
-                                     <option>{{$matiere->matiere}}</option>
+                                     <option >{{$matiere->matiere}}</option>
                                  @endforeach
                                 </select>     
                         </div>
@@ -69,19 +69,22 @@
                                     <th>Note 1</th>
                                     <th>Note 2</th>
                                     <th>Note 3</th>
-                                    <th></th>
+                                    <th>action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($eleves as $eleve)
                                 <tr>
-                                    <td></td>
+                                    <td><div>
+                                        <input type="hidden" value="{{$eleve->id}}" name="eleves_id">
+                                    </div></td>
                                     <td>{{$eleve->nom}}</td>
                                     <td>{{$eleve->prenom}}</td>
                                     <td>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="exampleInputPassword1" name="note1" placeholder="Entrer note1">
                                     </div>
+                                    
                                     <td>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="exampleInputPassword1" name="note2" placeholder="Entrer note2">
@@ -91,11 +94,11 @@
                                         <input type="text" class="form-control" id="exampleInputPassword1" name="note3" placeholder="Entrer note 3">
                                     </div></td>
                                     <td>
+                                    <button type="submit " class="btn btn-primary ">Valider</button>
                                     </td>
                                 </tr>
                                 @endforeach
-                            </tbody>
-                            <button type="submit " class="btn btn-primary ">Valider</button>
+                            </tbody> 
                         </form>
                         </table>
                     </div>

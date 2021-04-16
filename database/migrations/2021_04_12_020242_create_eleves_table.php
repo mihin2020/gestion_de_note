@@ -15,6 +15,7 @@ class CreateElevesTable extends Migration
     {
         Schema::create('eleves', function (Blueprint $table) {
             $table->id();
+            $table->boolean('statut')->default('true');
             $table->string('nom');
             $table->string('prenom');
             $table->string('sexe');

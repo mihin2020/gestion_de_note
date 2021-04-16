@@ -88,7 +88,7 @@
                                     <thead>
                                         <tr>
                                             <th>NOM</th>
-                                            <th>RENOM</th>
+                                            <th>PRENOMS</th>
                                             <th>EMAIL</th>
                                             <th class="text-center">CLASSE TENUE</th>
                                             <th class="text-center">Action</th>
